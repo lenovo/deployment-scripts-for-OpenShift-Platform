@@ -1,7 +1,6 @@
 # deployment-scripts-for-OpenShift-Platform
 deployment for OpenShift Container Platform for  DevOps and Hybrid Cloud
-
-# Deploying containerized Red Hat OpenShift® Container Platform 3.9 as system service with Container-Native Storage
+Deploying containerized Red Hat OpenShift® Container Platform 3.9 as system service with Container-Native Storage
 
 ## Instructions
 Please, refer to [Reference Architecture document](???)
