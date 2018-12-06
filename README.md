@@ -36,3 +36,7 @@ run:
 
 `atomic install --system     --set INVENTORY_FILE=/etc/ansible/hosts     --storage=ostree     --set PLAYBOOK_FILE=/usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml     --set OPTS="-v"     registry.access.redhat.com/openshift3/ose-ansible:v3.9`
 `atomic install –-system --storage=ostree  --set INVENTORY_FILE=/etc/ansible/hosts     --set PLAYBOOK_FILE=/usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml     --set OPTS="-v"     registry.access.redhat.com/openshift3/ose-ansible:v3.9`
+
+### Deploy Openshift cluster on Lenovo ThinkAgile HX cluster
+
+Please find deployment guide and script in [OCP_HX](???)
