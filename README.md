@@ -1,6 +1,4 @@
-# deployment-scripts-for-OpenShift-Platform
-deployment for OpenShift Container Platform for  DevOps and Hybrid Cloud
-Deploying containerized Red Hat OpenShift® Container Platform 3.9 as system service with Container-Native Storage
+# Deploying containerized Red Hat OpenShift® Container Platform 3.9 as system service with Container-Native Storage
 
 ## Instructions
 Please, refer to [Reference Architecture document](???)
@@ -37,9 +35,4 @@ run:
 ### Deploying OpenShift cluster
 
 `atomic install --system     --set INVENTORY_FILE=/etc/ansible/hosts     --storage=ostree     --set PLAYBOOK_FILE=/usr/share/ansible/openshift-ansible/playbooks/prerequisites.yml     --set OPTS="-v"     registry.access.redhat.com/openshift3/ose-ansible:v3.9`
-
 `atomic install –-system --storage=ostree  --set INVENTORY_FILE=/etc/ansible/hosts     --set PLAYBOOK_FILE=/usr/share/ansible/openshift-ansible/playbooks/deploy_cluster.yml     --set OPTS="-v"     registry.access.redhat.com/openshift3/ose-ansible:v3.9`
-
-### Deploy Openshift cluster on Lenovo ThinkAgile HX cluster
-
-Please find deployment guide and script in [OCP_HX](???)
