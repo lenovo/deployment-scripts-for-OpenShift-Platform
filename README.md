@@ -42,4 +42,4 @@ run:
 
 ### Deploy Openshift cluster on Lenovo ThinkAgile HX cluster
 
-Please find deployment guide and script in [OCP_HX](???)
+Please find deployment guide and script in [OCP_HX](https://github.com/lenovo/deployment-scripts-for-OpenShift-Platform/tree/master/OCP_HX)
