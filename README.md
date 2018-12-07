@@ -3,7 +3,7 @@ deployment for OpenShift Container Platform for  DevOps and Hybrid Cloud
 Deploying containerized Red Hat OpenShift® Container Platform 3.9 as system service with Container-Native Storage
 
 ## Instructions
-Please, refer to [Reference Architecture document](???)
+Please, refer to [Reference Architecture document](https://lenovopress.com/lp0968-red-hat-openshift-container-platform-reference-architecture)
  for actual instructions.
 
 ### Clone the repository
@@ -42,4 +42,5 @@ Update inventory group *[switches]* and run:
 ### Deploy Openshift cluster on Lenovo ThinkAgile HX cluster
 Please, refer to [Reference Architecture document](???)
  for actual instructions.
+ 
 Please find OCP on HX cluster (Nutanix cluster) deployment guide and script in [OCP_HX](https://github.com/lenovo/deployment-scripts-for-OpenShift-Platform/tree/master/OCP_HX)
