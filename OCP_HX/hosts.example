@@ -1,0 +1,86 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+lb
+local
+
+[OSEv3:vars]
+ansible_ssh_user=root
+ansible_become=true
+containerized=true
+openshift_master_cluster_method=native
+openshift_master_cluster_hostname=lb.ocp.example.local
+openshift_master_cluster_public_hostname=openshift.ocp.example.com
+openshift_master_default_subdomain=apps.ocp.example.com
+openshift_master_cluster_ip=172.29.7.30
+openshift_master_cluster_public_ip=10.240.39.98
+openshift_master_portal_net=10.0.0.0/16
+openshift_deployment_type=openshift-enterprise
+openshift_release=v3.9
+os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
+
+# Allow all auth
+openshift_master_identity_providers=[{'name': 'allow_all', 'login': 'true', 'challenge': 'true', 'kind': 'AllowAllPasswordIdentityProvider'}]
+
+rhel_subscription_user=??????
+rhel_subscription_pass=******
+
+openshift_enable_unsupported_configurations=True
+openshift_hosted_registry_storage_kind=nfs
+openshift_hosted_registry_storage_access_modes=['ReadWriteMany']
+openshift_hosted_registry_storage_host=192.168.5.2
+openshift_hosted_registry_storage_nfs_directory=/RedHat
+openshift_hosted_registry_storage_volume_name=registry
+openshift_hosted_registry_storage_volume_size=200Gi
+
+external_interface=ens192
+external_netmask=255.255.252.0
+external_gateway=10.240.36.1
+external_dns=10.240.0.10
+
+internal_netmask=255.255.0.0
+bastion_ip=172.29.7.1
+internal_gateway={{ bastion_ip }}
+internal_interface=ens224
+local_dns={{ bastion_ip }}
+dhcp_first_ip=172.29.7.100
+dhcp_last_ip=172.29.7.150
+root_password=Passw0rd
+
+openshift_install_examples=true
+
+openshift_master_api_port=8443 
+openshift_master_console_port=8443
+
+openshift_disable_check=docker_image_availability
+
+[local]
+127.0.0.1
+
+[masters]
+master1.ocp.example.local containerized=true openshift_ip=172.29.7.2 openshift_hostname=master1.ocp.example.local
+master2.ocp.example.local containerized=true openshift_ip=172.29.7.3 openshift_hostname=master2.ocp.example.local
+master3.ocp.example.local containerized=true openshift_ip=172.29.7.4 openshift_hostname=master3.ocp.example.local
+
+[nodes]
+master1.ocp.example.local  containerized=true openshift_ip=172.29.7.2 openshift_hostname=master1.ocp.example.local 
+master2.ocp.example.local  containerized=true openshift_ip=172.29.7.3 openshift_hostname=master2.ocp.example.local
+master3.ocp.example.local  containerized=true openshift_ip=172.29.7.4 openshift_hostname=master3.ocp.example.local 
+infra2.ocp.example.local openshift_node_labels="{'region': 'infra'}"  containerized=true  openshift_ip=172.29.7.6 openshift_hostname=infra2.ocp.example.local 
+infra1.ocp.example.local openshift_node_labels="{'region': 'infra'}"  containerized=true  openshift_ip=172.29.7.5 openshift_hostname=infra1.ocp.example.local 
+app1.ocp.example.local openshift_schedulable=true containerized=true  openshift_ip=172.29.7.7 openshift_hostname=app1.ocp.example.local openshift_hostname_check=false 
+app2.ocp.example.local openshift_schedulable=true containerized=true  openshift_ip=172.29.7.8 openshift_hostname=app2.ocp.example.local  
+app3.ocp.example.local openshift_schedulable=true containerized=true  openshift_ip=172.29.7.9 openshift_hostname=app3.ocp.example.local  
+app4.ocp.example.local openshift_schedulable=true containerized=true  openshift_ip=172.29.7.10 openshift_hostname=app4.ocp.example.local  
+
+[etcd]
+master1.ocp.example.local containerized=true openshift_ip=172.29.7.2 openshift_hostname=master1.ocp.example.local
+master2.ocp.example.local containerized=true openshift_ip=172.29.7.3 openshift_hostname=master2.ocp.example.local
+master3.ocp.example.local containerized=true openshift_ip=172.29.7.4 openshift_hostname=master3.ocp.example.local
+
+[lb]
+infra1.ocp.example.local openshift_hostname=infra1.ocp.example.local openshift_hostname_check=false openshift_ip=172.29.7.5 openshift_public_ip=10.240.39.91
+infra2.ocp.example.local openshift_hostname=infra2.ocp.example.local openshift_hostname_check=false openshift_ip=172.29.7.6 openshift_public_ip=10.240.39.92
+
+

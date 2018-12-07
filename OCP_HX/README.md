@@ -1,4 +1,4 @@
-# Deploying containerized Red Hat OpenShift® Container Platform 3.9 as system service with Container-Native Storage
+# Deploying containerized Red Hat OpenShift® Container Platform 3.9 on Lenovo ThinkAgile HX cluster(Nutanix cluster)
 
 ## Instructions
 Please, refer to [Reference Architecture document](???)
@@ -12,12 +12,7 @@ Inventory file has to be filled manually.
 Refer to *hosts.example* for possible variables.
 
 `cp hosts.example /etc/ansible/hosts;
-vi /etc/ansible/hosts`
-
-### Switch Configuration (optional)
-Update inventory group *[switches]* and run:
-
-`ansible-playbook src/cnos-configuration/configure-networking.yaml`
+vim /etc/ansible/hosts`
 
 ### Provisioning system setup
 
@@ -31,6 +26,9 @@ Update inventory group *[switches]* and run:
 run:
 
 `ansible-playbook src/keepalived-multimaster/keepalived.yaml`
+
+### Create shared storage
+Create a NFS storage container (named Redhat and granted ReadWriteMany access modes) in Nutanix cluster. And Create a directory (named registry and granted ReadWriteMany access modes) in storage container.
 
 ### Deploying OpenShift cluster
 
