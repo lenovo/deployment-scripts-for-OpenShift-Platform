@@ -30,7 +30,6 @@ Update inventory group *[switches]* and run:
 `ansible-playbook src/prerequisites/nodes_setup.yaml -k`
 
 ### Setting up multimaster HA
-run:
 
 `ansible-playbook src/keepalived-multimaster/keepalived.yaml`
 
@@ -42,4 +41,4 @@ run:
 
 ### Deploy Openshift cluster on Lenovo ThinkAgile HX cluster
 
-Please find deployment guide and script in [OCP_HX](https://github.com/lenovo/deployment-scripts-for-OpenShift-Platform/tree/master/OCP_HX)
+Please find OCP on HX cluster (Nutanix cluster) deployment guide and script in [OCP_HX](https://github.com/lenovo/deployment-scripts-for-OpenShift-Platform/tree/master/OCP_HX)
