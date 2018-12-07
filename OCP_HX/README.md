@@ -23,7 +23,6 @@ vim /etc/ansible/hosts`
 `ansible-playbook src/prerequisites/nodes_setup.yaml -k`
 
 ### Setting up multimaster HA
-run:
 
 `ansible-playbook src/keepalived-multimaster/keepalived.yaml`
 
